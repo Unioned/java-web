@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>come.me.servlet.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <!--
+        请求流程
+        1.用户发送请求,action=add
+        2.项目中,web.xml中找到url-pattern = /add  -> 12行
+        3.找到对应servlet名字servlet-name = AddServlet -> 11行
+        4.找和servlet-mapping中servlet-name一致的servlet.  -> 7行
+        5.找到对应servlet名字servlet-class = come.me.servlet.AddServlet ->8行
+        6.用户发送的是post请求（method=post）,因此tomcat会执行AddServlet中的doPost方法。
+    -->
+</web-app>
