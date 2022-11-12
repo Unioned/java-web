@@ -9,11 +9,10 @@ import java.io.IOException;
 
 public class Demo03Servlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) {
         //获取一个session,若获取不到则创建一个新的
         HttpSession session = req.getSession();
         System.out.println("session ID：" + session.getId());
-
     }
 }
 
